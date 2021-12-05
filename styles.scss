@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+
+$fgColor: #FFFFFF;
+
+$mgColor: #0F4C75;
+
+$bgColor1: linear-gradient(45deg, rgba(234,84,85,1) 0%, rgba(15,76,117,1) 80%);
+$bgColor2: linear-gradient(-45deg, rgba(0,173,181,1) 0%, rgba(240,123,63,1) 85%);
+$bgColor3: #1B262C;
+
+@mixin content($width) {
+  padding: 60px 100px;
+  
+  div {
+    max-width: $width;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 80px;
+    letter-spacing: 0.075em;
+  }
+}
+
+@mixin center($direction: row, $content: center, $items: center, $gap: 20px) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $content;
+  align-items: $items;
+  gap: $gap;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'IBM Plex Sans', sans-serif;
+  color: $fgColor;
+}
+
+h1, h2, h3 {
+  text-align: center;
+  margin: 0;
+}
+
+#landing-section {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: $bgColor1;
+
+  h1 {
+    font-size: 120px;
+    letter-spacing: 0.075em;
+  }
+  
+  h2 {
+    font-size: 36px;
+  }
+}
+
+#nav-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  @include center(row, space-evenly, center);
+  justify-content: space-evenly;
+  padding: 10px 0;
+
+  a {
+    font-size: 24px;
+  }
+}
+
+#title-container {
+  width: 100%;
+  height: 100%;
+  @include center(column);
+
+  h2 {
+    width: 520px;
+  }
+}
+
+#title-container > * {
+  margin: 0;
+}
+
+#team-section {
+  background-color: $bgColor3;
+  width: 100%;
+  @include content(1200px);
+  
+  div {
+    @include center(column, flex-start, center, 40px);
+
+    div {
+      flex-direction: row;
+      justify-content: center;
+
+      div {
+        flex-direction: column;
+        gap: 20px;
+
+        img {
+          height: 300px;
+          border-radius: 10px;
+          filter: drop-shadow(-3px 6px 4px rgba(0, 0, 0, 0.4));
+        }
+      }
+    }
+  }
+
+  p {
+    margin: 0 20px;
+  }
+}
+
+#app-section {
+  background: $bgColor2;
+  width: 100%;
+  @include content(1920px);
+
+  & > div {
+    @include center(row);
+  }
+
+  .title-container {
+    width: 600px;
+  }
+
+  h1 {
+    text-align: left;
+    font-size: 60px;
+  }
+}
+
+.card {
+  background-color: $mgColor;
+  @include center(column, flex-start, flex-start);
+  border-radius: 15px;
+  width: 25%;
+  height: 550px;
+  overflow-y: auto;
+  filter: drop-shadow(-3px 6px 4px rgba(0, 0, 0, 0.4));
+
+  * {
+    margin: 0 20px;
+  }
+
+  h3 {
+    text-align: left;
+    font-size: 30px;
+  }
+
+  img {
+    margin: 0;
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+  }
+
+  p {
+    &:last-child {
+      margin-bottom: 20px;
+    }
+  }
+}
