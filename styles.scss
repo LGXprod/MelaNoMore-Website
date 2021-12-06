@@ -7,11 +7,12 @@ $mgColor: #0F4C75;
 $bgColor1: linear-gradient(45deg, rgba(234,84,85,1) 0%, rgba(15,76,117,1) 80%);
 $bgColor2: linear-gradient(-45deg, rgba(0,173,181,1) 0%, rgba(240,123,63,1) 85%);
 $bgColor3: #1B262C;
+$bgColor4: #EA5455;
 
 @mixin content($width) {
   padding: 60px 100px;
   
-  div {
+  & > div {
     max-width: $width;
     margin: 0 auto;
   }
@@ -60,6 +61,24 @@ h1, h2, h3 {
   h2 {
     font-size: 36px;
   }
+
+  #menu-icon {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    
+    svg {
+      width: 40px;
+      display: none;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 900px) {
+      svg {
+        display: block;
+      }
+    }
+  }
 }
 
 #nav-bar {
@@ -72,8 +91,28 @@ h1, h2, h3 {
   justify-content: space-evenly;
   padding: 10px 0;
 
+  hr {
+    display: none;
+    margin: 0;
+    width: 100%;
+  }
+
   a {
     font-size: 24px;
+  }
+}
+
+@media (max-width: 900px) {
+  #nav-bar {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 280px;
+  }
+
+  #nav-bar hr {
+    display: block;
   }
 }
 
@@ -96,28 +135,38 @@ h1, h2, h3 {
   width: 100%;
   @include content(1200px);
   
-  div {
+  & > div {
     @include center(column, flex-start, center, 40px);
 
-    div {
-      flex-direction: row;
-      justify-content: center;
+    & > div {
+      width: 100%;
+      // display: grid;
+      // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      @include center(row);
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+  }
 
-      div {
-        flex-direction: column;
-        gap: 20px;
+  .profile {
+    width: 300px;
+    @include center(column);
 
-        img {
-          height: 300px;
-          border-radius: 10px;
-          filter: drop-shadow(-3px 6px 4px rgba(0, 0, 0, 0.4));
-        }
-      }
+    img {
+      width: 100%;
+      border-radius: 10px;
+      filter: drop-shadow(-3px 6px 4px rgba(0, 0, 0, 0.4));
     }
   }
 
   p {
     margin: 0 20px;
+  }
+
+  @media (max-width: 900px) {
+    h1 {
+      font-size: 50px;
+    }
   }
 }
 
@@ -128,6 +177,10 @@ h1, h2, h3 {
 
   & > div {
     @include center(row);
+
+    & > div:nth-child(2) {
+      @include center(row);
+    }
   }
 
   .title-container {
@@ -138,6 +191,26 @@ h1, h2, h3 {
     text-align: left;
     font-size: 60px;
   }
+
+  @media (max-width: 1500px) {
+    & > div {
+      @include center(column, flex-start, center);
+
+      & > div:nth-child(2) {
+        width: 100%;
+        @include center(row, space-evenly, center, 40px);
+        flex-wrap: wrap;
+      }
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .title-container {
+      margin-bottom: 20px;
+    }
+  }  
 }
 
 .card {
@@ -169,3 +242,82 @@ h1, h2, h3 {
     }
   }
 }
+
+@media (max-width: 1500px) {
+  .card {
+    width: 320px;
+  }
+}
+
+#ml-section {
+  background-color: $bgColor4;
+  width: 100%;
+
+  @include content(1920px);
+
+  & > div {
+    @include center(column);
+  }
+
+  h1 {
+    font-size: 55px;
+    margin: 20px;
+  }
+
+  #cnn-icon {
+    height: 150px;
+  }
+
+  #stats {
+    @include center(row, center, flex-start);
+    width: 100%;
+    margin: 40px 0;
+
+    div {
+      @include center(column, center, center, 10px);
+      width: 400px;
+
+      p:first-child {
+        font-size: 120px;
+      }
+
+      p {
+        font-size: 24px;
+        margin: 0;
+        text-align: center;
+      }
+    }
+
+    .img-grid {
+      width: auto;
+      display: grid;
+      grid-template-columns: 100px 100px 100px;
+    }
+  }
+
+  @media (max-width: 1400px) {
+    h1 {
+      font-size: 40px;
+    }
+
+    #stats {
+      div {
+        p:first-child {
+          font-size: 80px;
+        }
+
+        p {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1080px) {
+    #stats {
+      @include center(column, center, center, 30px);
+      margin: 0;
+    }
+  }
+}
+
