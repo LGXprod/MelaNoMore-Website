@@ -209,7 +209,7 @@ h1, h2, h3 {
   gap: 20px;
   border-radius: 15px;
   width: 25%;
-  height: 550px;
+  height: 600px;
   overflow-y: auto;
   -webkit-filter: drop-shadow(-3px 6px 4px rgba(0, 0, 0, 0.4));
           filter: drop-shadow(-3px 6px 4px rgba(0, 0, 0, 0.4));
@@ -227,7 +227,6 @@ h1, h2, h3 {
 .card img {
   margin: 0;
   width: 100%;
-  border-radius: 15px 15px 0 0;
 }
 
 .card p:last-child {

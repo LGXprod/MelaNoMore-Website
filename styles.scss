@@ -145,7 +145,7 @@ h1, h2, h3 {
   @include center(column, flex-start, flex-start);
   border-radius: 15px;
   width: 25%;
-  height: 550px;
+  height: 600px;
   overflow-y: auto;
   filter: drop-shadow(-3px 6px 4px rgba(0, 0, 0, 0.4));
 
@@ -161,7 +161,6 @@ h1, h2, h3 {
   img {
     margin: 0;
     width: 100%;
-    border-radius: 15px 15px 0 0;
   }
 
   p {
