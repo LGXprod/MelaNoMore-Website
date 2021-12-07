@@ -21,6 +21,10 @@ $bgColor4: #EA5455;
     font-size: 80px;
     letter-spacing: 0.075em;
   }
+
+  @media (max-width: 700px) {
+    padding: 60px 50px;
+  }
 }
 
 @mixin center($direction: row, $content: center, $items: center, $gap: 20px) {
@@ -74,11 +78,17 @@ h1, h2, h3 {
 
   @media (max-width: 900px) {
     h1 {
-      font-size: 55px;
+      font-size: 60px;
     }
     
     h2 {
       font-size: 14px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    h1 {
+      font-size: 35px;
     }
   }
 
@@ -167,7 +177,7 @@ h1, h2, h3 {
       width: 100%;
       // display: grid;
       // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      @include center(row);
+      @include center(row, center, flex-start);
       flex-wrap: wrap;
       gap: 40px;
     }
@@ -193,6 +203,12 @@ h1, h2, h3 {
       font-size: 50px;
     }
   }
+
+  @media (max-width: 400px) {
+    h1 {
+      font-size: 35px;
+    }
+  }
 }
 
 #app-section {
@@ -210,11 +226,23 @@ h1, h2, h3 {
 
   .title-container {
     width: 600px;
+
+    @media (max-width: 600px) {
+      width: 100%;
+    }
   }
 
   h1 {
     text-align: left;
     font-size: 60px;
+
+    @media (max-width: 600px) {
+      font-size: 40px;
+    }
+
+    @media (max-width: 450px) {
+      font-size: 30px;
+    }
   }
 
   @media (max-width: 1500px) {
@@ -234,16 +262,6 @@ h1, h2, h3 {
 
     .title-container {
       margin-bottom: 20px;
-    }
-  }
-
-  @media (max-width: 600px) {
-    .title-container {
-      width: 100%;
-    }
-
-    h1 {
-      font-size: 40px;
     }
   }
 }
@@ -312,6 +330,10 @@ h1, h2, h3 {
       @include center(column, center, center, 10px);
       width: 400px;
 
+      @media (max-width: 400px) {
+        width: 100%;
+      }
+
       p:first-child {
         font-size: 120px;
       }
@@ -352,6 +374,12 @@ h1, h2, h3 {
     #stats {
       @include center(column, center, center, 30px);
       margin: 0;
+    }
+  }
+
+  @media (max-width: 400px) {
+    h1 {
+      font-size: 35px;
     }
   }
 }
