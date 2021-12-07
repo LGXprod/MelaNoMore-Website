@@ -384,3 +384,10 @@ h1, h2, h3 {
   }
 }
 
+#disclaimer-section {
+  background-color: $bgColor3;
+  width: 100%;
+  @include content(1200px);
+  padding: 20px;
+  text-align: center;
+}

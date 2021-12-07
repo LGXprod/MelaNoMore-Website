@@ -584,4 +584,28 @@ h1, h2, h3 {
     font-size: 35px;
   }
 }
+
+#disclaimer-section {
+  background-color: #1B262C;
+  width: 100%;
+  padding: 60px 100px;
+  padding: 20px;
+  text-align: center;
+}
+
+#disclaimer-section > div {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#disclaimer-section h1 {
+  font-size: 80px;
+  letter-spacing: 0.075em;
+}
+
+@media (max-width: 700px) {
+  #disclaimer-section {
+    padding: 60px 50px;
+  }
+}
 /*# sourceMappingURL=styles.css.map */
