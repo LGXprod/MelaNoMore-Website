@@ -205,22 +205,26 @@
       function showMobileMenu() {
         const menuIcon = document.getElementById("menu-icon");
         const navBar = document.getElementById("nav-bar");
+        const title = document.getElementById("title-container").getElementsByTagName("h1")[0];
         const hrs = navBar.getElementsByTagName("hr");
 
-        function showHrs(isShow) {
+        function makeResponsive(isShow) {
           for (let hr of hrs) {
             hr.style.display = isShow ? "flex" : "none";
+            title.style.paddingTop = isShow ? "40px" : "0";
           }
         }
 
         if (isMobileMenuVisible) {
           menuIcon.style.top = "20px";
           navBar.style.display = "none";
+          title.style.paddingTop = "0";
 
           isMobileMenuVisible = false;
         } else {
           menuIcon.style.top = "300px";
           navBar.style.display = "flex";
+          title.style.paddingTop = "40px";
 
           for (let navItem of navBar.children) {
             navItem.style.opacity = 0;
@@ -237,7 +241,7 @@
         }
 
         const media = window.matchMedia("(max-width: 900px)");
-        media.addListener(({ matches }) => showHrs(matches));
+        media.addListener(({ matches }) => makeResponsive(matches));
       }
     </script>
   </body>
