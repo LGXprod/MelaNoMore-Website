@@ -171,7 +171,7 @@ h1, h2, h3 {
   margin: 0;
 }
 
-#team-section {
+#team-section, #demo-section {
   background-color: $bgColor3;
   width: 100%;
   @include content(1200px);
@@ -210,9 +210,23 @@ h1, h2, h3 {
     }
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: 460px) {
     h1 {
       font-size: 35px;
+    }
+  }
+}
+
+#demo-section {
+  background: $bgColor1;
+
+  iframe {
+    display: block;
+    margin: 0 auto;
+    padding-top: 20px;
+
+    @media (max-width: 650px) {
+      width: 90%;
     }
   }
 }
